@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -1132679940271451160}
   m_Layer: 6
   m_Name: EcannonBall
-  m_TagString: Enemy
+  m_TagString: ECannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

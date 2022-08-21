@@ -25,13 +25,13 @@ public class FollowPlayer : MonoBehaviour
         {
             if (Vector3.Distance(myTransform.position, player.position) >= minDistance)
             {
-                transform.position += transform.forward * speed * Time.deltaTime;
-                Vector3 targetPos = new Vector3(player.transform.position.x, transform.position.y, player.position.z);
-                myTransform.LookAt(targetPos * -1);
+                transform.position -= transform.forward * speed * Time.deltaTime;
+                transform.rotation = Quaternion.LookRotation(transform.position - player.position);
             }
             else
             {
-                transform.rotation *= Quaternion.Euler(0, 90f * speed * Time.deltaTime, 0);
+                Quaternion xAxis = Quaternion.FromToRotation(Vector3.right, transform.position - player.position);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, xAxis, speed * Time.deltaTime);
                 //attack
             }
         }
