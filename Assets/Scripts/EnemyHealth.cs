@@ -6,16 +6,26 @@ public class EnemyHealth : MonoBehaviour
 {
     public int Health = 1;
     private GameObject player;
+    [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject chest;
 
     private void Start()
     {
         player = FindObjectOfType<Movement>().gameObject;
     }
 
-    public int DecreaseHealth()
+    private void OnCollisionEnter(Collision collision)
     {
-        Health--;
-        return Health;
+        if (collision.gameObject.tag == "PCannon")
+        {
+            Health--;
+            if (Health <= 0)
+            {
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                Instantiate(chest, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void Update()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PointManager : MonoBehaviour
 {
@@ -8,9 +9,12 @@ public class PointManager : MonoBehaviour
     public GameObject[] upgrades;
     public int[] levelPoints;
 
+    public TMP_Text scoreObj;
+
     public int IncreaseScore(int points)
     {
         score += points;
+        scoreObj.text = score.ToString();
         Upgrade();
         return score;
     }

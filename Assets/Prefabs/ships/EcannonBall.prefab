@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4747939254804106719}
   - component: {fileID: 4521786472112527372}
   - component: {fileID: -1132679940271451160}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: EcannonBall
   m_TagString: ECannon
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6905087635425260598}
   m_Material: {fileID: 13400000, guid: 2b8ccfa3880373043ac9c3a4a81f4114, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.7

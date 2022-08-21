@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,14 +12,17 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
 
+    [SerializeField] private GameObject explosion;
+
     private void Awake()
     {
         health = heartsCount;
+        HealthSystem();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "ECannon")
+        if (other.gameObject.tag == "ECannon")
         {
             health -= 1;
             HealthSystem();
@@ -26,13 +30,22 @@ public class PlayerHealth : MonoBehaviour
             {
                 die();
             }
-            Destroy(collision.gameObject);
+            Invoke("resetPosition", 1f);
+            Destroy(other.gameObject);
         }
+    }
+
+    private void resetPosition()
+    {
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
+        transform.localPosition = new Vector3(0, -40, 0);
     }
 
     private void die()
     {
-        //fillll
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        FindObjectOfType<SceneMngr>().Menu();
     }
 
     private void HealthSystem()

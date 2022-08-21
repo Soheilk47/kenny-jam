@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public Vector3 COM;
-
     [Space(15)]
     public float speed = 1f;
 
@@ -13,7 +11,6 @@ public class Movement : MonoBehaviour
 
     public float moveThresold = 10f;
 
-    private Transform mCOM;
     private float verInput;
     private float moveFactor;
 
@@ -22,20 +19,8 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Balance();
         Move();
         Steer();
-    }
-
-    private void Balance()
-    {
-        if (!mCOM)
-        {
-            mCOM = new GameObject("COM").transform;
-            mCOM.SetParent(transform);
-        }
-        mCOM.position = COM;
-        GetComponentInChildren<Rigidbody>().centerOfMass = mCOM.position;
     }
 
     private void Move()
