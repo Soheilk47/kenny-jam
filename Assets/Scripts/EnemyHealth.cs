@@ -4,14 +4,35 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public int Health = 1;
+    private GameObject player;
 
-    void Start()
+    private void Start()
     {
-        
+        player = FindObjectOfType<Movement>().gameObject;
     }
 
-    void Update()
+    public int DecreaseHealth()
     {
-        
+        Health--;
+        return Health;
+    }
+
+    private void Update()
+    {
+        StartCoroutine(DistanceDestroy());
+    }
+
+    private IEnumerator DistanceDestroy()
+    {
+        yield return new WaitForSeconds(4f);
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) > 400f)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            StartCoroutine(DistanceDestroy());
+        }
     }
 }

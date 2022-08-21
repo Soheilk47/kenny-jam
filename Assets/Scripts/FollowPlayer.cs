@@ -4,27 +4,36 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-	private Transform myTransform;
-	private Transform target;
-	public Vector3 offset = new Vector3(3, 7.5f, -3);
+    [SerializeField] private float minDistance;
+    [SerializeField] private float speed;
+    private Transform myTransform;
+    private Transform player;
 
-	void Awake()
-	{
-		target = GameObject.Find("Ship").transform;
-	}
+    private void Awake()
+    {
+        player = GameObject.Find("Player").transform;
+    }
 
-	void Start()
-	{
-		myTransform = this.transform;
-	}
+    private void Start()
+    {
+        myTransform = this.transform;
+    }
 
-	// Update is called once per frame
-	void FixedUpdate()
-	{
-		if (target != null)
-		{
-			myTransform.position = target.position + offset;
-			myTransform.LookAt(target.position, Vector3.up);
-		}
-	}
+    private void FixedUpdate()
+    {
+        if (player != null)
+        {
+            if (Vector3.Distance(myTransform.position, player.position) >= minDistance)
+            {
+                transform.position += transform.forward * speed * Time.deltaTime;
+                Vector3 targetPos = new Vector3(player.transform.position.x, transform.position.y, player.position.z);
+                myTransform.LookAt(targetPos * -1);
+            }
+            else
+            {
+                transform.rotation *= Quaternion.Euler(0, 90f * speed * Time.deltaTime, 0);
+                //attack
+            }
+        }
+    }
 }

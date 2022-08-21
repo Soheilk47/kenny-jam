@@ -13,13 +13,12 @@ public class WaveManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
-        else if(instance = this)
+        else if (instance = this)
         {
-            Debug.Log("Instance already exists, destroying object!");
             Destroy(this);
         }
     }
