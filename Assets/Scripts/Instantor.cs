@@ -20,9 +20,9 @@ public class Instantor : MonoBehaviour
     {
         if (respawnTimeP < 0)
         {
-            if (pointManager.score / 50 < gameObjects.Length)
+            if (pointManager.score / 5 < gameObjects.Length)
             {
-                for (int i = 0; i < pointManager.score / 50 + 1; i++)
+                for (int i = 0; i < pointManager.score / 5 + 1; i++)
                 {
                     Vector3 x = GetRandomNumber();
 
