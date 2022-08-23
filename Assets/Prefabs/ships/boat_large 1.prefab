@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466492240908544465}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: shootPos L (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466492241307381526}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: shootPos R (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,9 @@ GameObject:
   - component: {fileID: -4244371969424977385}
   - component: {fileID: 225780514132082550}
   - component: {fileID: 3494742689595263000}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: boat_large 1
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 7098797500614238076, guid: 9bff8dbba389708478f943fe19f1b43e,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7098797500614238078, guid: 9bff8dbba389708478f943fe19f1b43e,
         type: 3}
@@ -252,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 7098797500614238078, guid: 9bff8dbba389708478f943fe19f1b43e,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7098797500614394718, guid: 9bff8dbba389708478f943fe19f1b43e,
         type: 3}
@@ -342,7 +342,7 @@ PrefabInstance:
     - target: {fileID: 7098797500614238076, guid: 9bff8dbba389708478f943fe19f1b43e,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7098797500614238078, guid: 9bff8dbba389708478f943fe19f1b43e,
         type: 3}
@@ -352,7 +352,7 @@ PrefabInstance:
     - target: {fileID: 7098797500614238078, guid: 9bff8dbba389708478f943fe19f1b43e,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7098797500614394718, guid: 9bff8dbba389708478f943fe19f1b43e,
         type: 3}

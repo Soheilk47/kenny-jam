@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
     private void resetPosition()
     {
         transform.localRotation = Quaternion.Euler(0, 0, 0);
-        transform.localPosition = new Vector3(0, -40, 0);
+        transform.localPosition = new Vector3(0, -39.7f, 0);
     }
 
     private void die()

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6905087635422997238}
   - component: {fileID: -639657725668896944}
   - component: {fileID: -4747939254804106719}
-  - component: {fileID: 4521786472112527372}
   - component: {fileID: -1132679940271451160}
   m_Layer: 8
   m_Name: EcannonBall
@@ -115,19 +114,6 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &4521786472112527372
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6905087635425260598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4, y: 1.4, z: 1.4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &-1132679940271451160
 AudioSource:
